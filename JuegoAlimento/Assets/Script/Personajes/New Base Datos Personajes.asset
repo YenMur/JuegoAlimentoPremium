@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a04faece353a44fad187c1ac676545, type: 3}
+  m_Name: New Base Datos Personajes
+  m_EditorClassIdentifier: Assembly-CSharp::BaseDatosPersonajes
+  personajes:
+  - personajeSprite: {fileID: 21300000, guid: 5f364350f5e898e4dbe5460b416b64b0, type: 3}
+  - personajeSprite: {fileID: 21300000, guid: 69a8462ee8d57a14db72983a86e6f217, type: 3}
