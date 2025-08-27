@@ -11,15 +11,26 @@ public class GameController1 : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI TMP_Alerta;
 
-    private string nombre=GameManager.Instance.datosJugador.nombre;
-    private string edad=GameManager.Instance.datosJugador.edad;
-    private string ciudad=GameManager.Instance.datosJugador.ciudad;
-    private string correo=GameManager.Instance.datosJugador.correo;  
+    private string nombre;
+    private string edad;
+    private string ciudad;
+    private string correo;
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         TMP_Alerta.gameObject.SetActive(false);
+
+        if (GameManager.Instance != null)
+        {
+            nombre = GameManager.Instance.datosJugador.nombre;
+            edad = GameManager.Instance.datosJugador.edad;
+            ciudad = GameManager.Instance.datosJugador.ciudad;
+            correo = GameManager.Instance.datosJugador.correo;
+        }
+
     }
 
     // Update is called once per frame
@@ -27,6 +38,8 @@ public class GameController1 : MonoBehaviour
     {
         
     }
+
+
 
     public void GuardarDatos()
     {
