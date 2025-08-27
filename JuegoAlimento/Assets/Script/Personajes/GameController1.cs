@@ -11,10 +11,10 @@ public class GameController1 : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI TMP_Alerta;
 
-    private string nombre;
-    private string edad;
-    private string ciudad;
-    private string correo;  
+    private string nombre=GameManager.Instance.datosJugador.nombre;
+    private string edad=GameManager.Instance.datosJugador.edad;
+    private string ciudad=GameManager.Instance.datosJugador.ciudad;
+    private string correo=GameManager.Instance.datosJugador.correo;  
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

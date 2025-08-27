@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
 
+    public DatosJugador datosJugador=new DatosJugador();
+
     private void Awake()
     {
         if (Instance == null)
@@ -17,10 +19,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    #region Player
-    public string playerName;
-    #endregion
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
