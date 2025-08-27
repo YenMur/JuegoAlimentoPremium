@@ -9,6 +9,8 @@ public class GameController1 : MonoBehaviour
     [SerializeField] private TMP_InputField ITCiudad;
     [SerializeField] private TMP_InputField ITCorreo;
 
+    [SerializeField] private TextMeshProUGUI TMP_Alerta;
+
     private string nombre;
     private string edad;
     private string ciudad;
@@ -17,7 +19,7 @@ public class GameController1 : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        TMP_Alerta.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,7 +38,9 @@ public class GameController1 : MonoBehaviour
 
             if(string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(edad) || string.IsNullOrEmpty(ciudad) || string.IsNullOrEmpty(correo))
             {
+                
                 Debug.LogWarning("Por favor, complete todos los campos.");
+                TMP_Alerta.gameObject.SetActive(true);
                 return;
             }
         
