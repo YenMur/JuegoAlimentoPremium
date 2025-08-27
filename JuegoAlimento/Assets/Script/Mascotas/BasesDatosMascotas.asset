@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BasesDatosMascotas
   m_EditorClassIdentifier: Assembly-CSharp::BaseDatosMascotas
   mascotas:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - mascotaSprite: {fileID: 21300000, guid: 51aa40a962ff8594d8053a0d306c0112, type: 3}
+  - mascotaSprite: {fileID: 0}
+  - mascotaSprite: {fileID: 0}
+  - mascotaSprite: {fileID: 0}

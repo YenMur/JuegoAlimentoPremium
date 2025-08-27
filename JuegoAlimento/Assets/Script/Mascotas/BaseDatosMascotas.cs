@@ -3,14 +3,14 @@ using UnityEngine;
 [CreateAssetMenu]
 public class BaseDatosMascotas : ScriptableObject
 {
-    public Mascota[] mascotas;
+    public Mascotas[] mascotas;
 
     public int MascotaCount
     {
         get { return mascotas.Length; }
     }
 
-    public Mascota GetMascota(int index)
+    public Mascotas GetMascota(int index)
     {
         return mascotas[index];
     }

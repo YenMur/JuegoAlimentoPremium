@@ -39,7 +39,7 @@ public class MascotaManager : MonoBehaviour
 
     private void ActualizarMascota(int opcionSeleccionada)
     {
-        Mascota mascota = bdMascotas.GetMascota(opcionSeleccionada);
+        Mascotas mascota = bdMascotas.GetMascota(opcionSeleccionada);
         mascotaImagen.sprite = mascota.mascotaSprite;
        
     }
