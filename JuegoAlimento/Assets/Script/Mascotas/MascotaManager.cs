@@ -5,12 +5,22 @@ public class MascotaManager : MonoBehaviour
 {
 
     public BaseDatosMascotas bdMascotas;
-    public Image mascotaImagen;
+
+    public SpriteRenderer mascotaSprite;
 
     private int opcionSeleccionada = 0;
 
     void Start()
     {
+        if (!PlayerPrefs.HasKey("opcionSeleccionada"))
+        {
+            opcionSeleccionada = 0;
+        }
+        else
+        {
+            Load();
+        }
+
         ActualizarMascota(opcionSeleccionada);
     } 
 
@@ -24,6 +34,7 @@ public class MascotaManager : MonoBehaviour
         }
 
         ActualizarMascota(opcionSeleccionada);
+        Save();
     }
 
     public void OpcionAnterior()
@@ -35,12 +46,24 @@ public class MascotaManager : MonoBehaviour
         }
 
         ActualizarMascota(opcionSeleccionada);
+        Save();
     }
 
     private void ActualizarMascota(int opcionSeleccionada)
     {
         Mascotas mascota = bdMascotas.GetMascota(opcionSeleccionada);
-        mascotaImagen.sprite = mascota.mascotaSprite;
+        mascotaSprite.sprite = mascota.mascotaSprite;
        
     }
+
+    private void Load()
+    {
+        opcionSeleccionada = PlayerPrefs.GetInt("opcionSeleccionada");
+    }
+
+    private void Save()
+    {
+        PlayerPrefs.SetInt("opcionSeleccionada", opcionSeleccionada);
+    }
+
 }

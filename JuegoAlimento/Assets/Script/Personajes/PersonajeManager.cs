@@ -5,13 +5,22 @@ public class PersonajeManager : MonoBehaviour
 {
     public BaseDatosPersonajes bdPersonajes;
 
-    public Image personajeImagen;
+    public SpriteRenderer personajeSprite;
 
     private int opcionSeleccionada = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (!PlayerPrefs.HasKey("opcionSeleccionada"))
+        {
+            opcionSeleccionada = 0;
+        }
+        else
+        {
+            Load();
+        }
+
         UpdateCharacter(opcionSeleccionada);
     }
     
@@ -24,6 +33,7 @@ public class PersonajeManager : MonoBehaviour
             opcionSeleccionada = 0;
         }
         UpdateCharacter(opcionSeleccionada);
+        Save();
     }
 
     public void OpcionAnterior()
@@ -34,11 +44,23 @@ public class PersonajeManager : MonoBehaviour
             opcionSeleccionada = bdPersonajes.PersonajesCount - 1;
         }
         UpdateCharacter(opcionSeleccionada);
+        Save();
     }
 
     private void UpdateCharacter(int opcionSeleccionada)
     {
         Personajes personaje = bdPersonajes.GetPersonaje(opcionSeleccionada);
-        personajeImagen.sprite = personaje.personajeSprite;
+        personajeSprite.sprite = personaje.personajeSprite;
     }
+
+    private void Load()
+    {
+        opcionSeleccionada = PlayerPrefs.GetInt("opcionSeleccionada");
+    }
+
+    private void Save()
+    {
+        PlayerPrefs.SetInt("opcionSeleccionada", opcionSeleccionada);
+    }
+
 }
