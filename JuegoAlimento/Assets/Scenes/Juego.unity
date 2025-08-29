@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 408829799}
   m_Layer: 0
   m_Name: "ni\xF1a"
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -337,7 +337,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 5f364350f5e898e4dbe5460b416b64b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1088,6 +1088,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328712616}
   m_CullTransparentMesh: 1
+--- !u!1 &1341856290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1341856292}
+  - component: {fileID: 1341856291}
+  m_Layer: 0
+  m_Name: FoodSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1341856291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341856290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c60693f5a9e74cd47ace41aeb660d438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoodSpawner
+  baseDatosComidas: {fileID: 11400000, guid: 54e1b572b37e4dd4183c96ccd26786c9, type: 2}
+  foodPrefab: {fileID: 5093447469907124582, guid: 0bade2f3ca23be8478e203ba38bcb75e, type: 3}
+  tiempoEntreSpawn: 0.7
+  minVelocidadCaida: 4
+  maxVelocidadCaida: 7
+  probabilidadComidaBuena: 60
+  minX: -8
+  maxX: 8
+  alturaSpawn: 8
+--- !u!4 &1341856292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341856290}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.05, y: 4.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1419909478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,3 +1727,4 @@ SceneRoots:
   - {fileID: 2061064828}
   - {fileID: 491029768}
   - {fileID: 408829795}
+  - {fileID: 1341856292}
