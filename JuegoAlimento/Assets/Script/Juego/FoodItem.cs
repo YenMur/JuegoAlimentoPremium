@@ -1,0 +1,73 @@
+using UnityEngine;
+
+public class FoodItem : MonoBehaviour
+{
+    public float velocidadCaida = 3f;
+    public bool esBuena = true;
+    private Rigidbody2D rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        if (rb == null)
+        {
+            rb = gameObject.AddComponent<Rigidbody2D>();
+        }
+
+        rb.isKinematic = false;
+        rb.gravityScale = 0f;
+        rb.freezeRotation = true;
+
+        ConfigurarCollider();
+
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null && sr.sortingOrder >= 2)
+        {
+            sr.sortingOrder = 1; 
+        }
+    }
+
+    void ConfigurarCollider()
+    {
+        CircleCollider2D collider = GetComponent<CircleCollider2D>();
+        if (collider == null)
+        {
+            collider = gameObject.AddComponent<CircleCollider2D>();
+        }
+
+        collider.isTrigger = true;
+        collider.radius = 0.4f;
+    }
+
+    void Update()
+    {
+        transform.Translate(Vector3.down * velocidadCaida * Time.deltaTime);
+
+        if (transform.position.y < -10f)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("Colisión detectada con: " + other.gameObject.name + " - Tag: " + other.tag);
+
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log(esBuena ? "¡Comida buena recogida!" : "¡Comida mala recogida!");
+            Destroy(gameObject);
+        }
+    }
+
+
+    void OnDrawGizmosSelected()
+    {
+        CircleCollider2D collider = GetComponent<CircleCollider2D>();
+        if (collider != null)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(transform.position, collider.radius);
+        }
+    }
+}

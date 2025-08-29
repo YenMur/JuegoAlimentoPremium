@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 3cd897ab8ca9d2149a7ce8df8d034b33
+guid: 10e2ee04d3b5c424fb8c7ef958a8e33a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7103923555067612565
-    second: volumenW_0
-  - first:
-      213: 5730522745345923396
-    second: volumenW_1
-  - first:
-      213: -7406020783615054536
-    second: volumenW_2
+      213: -6228801864385824115
+    second: ChatGPT Image 25 ago 2025, 10_25_18_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -90,7 +84,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Standalone
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -103,7 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -171,13 +165,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: volumenW_0
+      name: ChatGPT Image 25 ago 2025, 10_25_18_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 45
-        width: 291
-        height: 422
+        x: 215
+        y: 88
+        width: 594
+        height: 795
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,52 +180,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b623aa43a2bc96d90800000000000000
-      internalID: -7103923555067612565
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: volumenW_1
-      rect:
-        serializedVersion: 2
-        x: 323
-        y: 141
-        width: 100
-        height: 231
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 449d3a54318e68f40800000000000000
-      internalID: 5730522745345923396
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: volumenW_2
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 73
-        width: 163
-        height: 366
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 83de6790657883990800000000000000
-      internalID: -7406020783615054536
+      spriteID: d8afdf8b4b9de89a0800000000000000
+      internalID: -6228801864385824115
       vertices: []
       indices: 
       edges: []
@@ -250,9 +200,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      volumenW_0: -7103923555067612565
-      volumenW_1: 5730522745345923396
-      volumenW_2: -7406020783615054536
+      ChatGPT Image 25 ago 2025, 10_25_18_0: -6228801864385824115
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
