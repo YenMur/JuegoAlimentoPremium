@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public int puntos = 0;
 
+    public bool juegoTerminado = false;
+
     private void Awake()
     {
         if (Instance == null)

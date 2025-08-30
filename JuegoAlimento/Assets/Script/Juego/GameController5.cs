@@ -1,4 +1,6 @@
+using System.Collections;
 using TMPro;
+using Unity.AppUI.UI;
 using UnityEngine;
 
 public class GameController5 : MonoBehaviour
@@ -6,6 +8,8 @@ public class GameController5 : MonoBehaviour
     [SerializeField] private TextMeshProUGUI TMP_Puntos;
 
     [SerializeField] private TextMeshProUGUI TMP_Tiempo;
+
+    [SerializeField] private GameObject PanelPerdio;
 
     private float cuentaRegresiva = 40f; // Tiempo inicial en segundos
     private float currentTime;
@@ -16,7 +20,7 @@ public class GameController5 : MonoBehaviour
     void Start()
     {
         currentTime= cuentaRegresiva;
-
+        PanelPerdio.SetActive(false);
     }
 
     // Update is called once per frame
@@ -50,6 +54,21 @@ public class GameController5 : MonoBehaviour
     public void ActualizarPuntos()
     {
         TMP_Puntos.text=GameManager.Instance.puntos.ToString();
+    }
+
+    public void Perder()
+    {
+        cuentaRegresivaActiva=false;
+        PanelPerdio.SetActive(true);
+        GameManager.Instance.juegoTerminado=true;
+
+        StartCoroutine(CargarScore());
+    }
+
+    private IEnumerator CargarScore()
+    {
+        yield return new WaitForSeconds(2f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Resultado");
     }
 
 }

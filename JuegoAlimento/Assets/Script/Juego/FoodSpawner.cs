@@ -25,7 +25,10 @@ public class FoodSpawner : MonoBehaviour
     {
         while (true)
         {
-            SpawnFood();
+            if(!GameManager.Instance.juegoTerminado)
+            {
+                SpawnFood();
+            }
             yield return new WaitForSeconds(tiempoEntreSpawn);
         }
     }

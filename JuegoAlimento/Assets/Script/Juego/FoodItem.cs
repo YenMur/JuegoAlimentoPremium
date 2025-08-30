@@ -3,16 +3,20 @@ using System.Collections;
 
 public class FoodItem : MonoBehaviour
 {
-    public float velocidadCaida = 3f;
+    public float velocidadCaida;
     public bool esBuena = true;
     private Rigidbody2D rb;
 
     private int comidaBuena = 10;
     private int comidaMala = -5;
 
+    private GameController5 gameController;
+
     void Start()
     {
-        
+        gameController=FindFirstObjectByType<GameController5>();
+
+        velocidadCaida = 3f;
         rb = GetComponent<Rigidbody2D>();
         if (rb == null)
         {
@@ -75,6 +79,7 @@ public class FoodItem : MonoBehaviour
                 {
                    // GameManager.Instance.GameOver();
                    Debug.Log("Game Over!");
+                    gameController.Perder();
                 }
             }
 

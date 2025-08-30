@@ -8,6 +8,8 @@ public class MovimientoPersonaje : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance.juegoTerminado) return;
+        
         float dir = Input.GetAxis("Horizontal");
 
         if (dir != 0)
