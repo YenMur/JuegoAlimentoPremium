@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class FoodItem : MonoBehaviour
 {
@@ -68,6 +69,13 @@ public class FoodItem : MonoBehaviour
             {
                 // Aquí puedes agregar lógica para cuando se recoge comida mala
                 GameManager.Instance.sumPuntos(comidaMala);
+                HealthManager.health--;
+
+                if(HealthManager.health <= 0)
+                {
+                   // GameManager.Instance.GameOver();
+                   Debug.Log("Game Over!");
+                }
             }
 
             Debug.Log(esBuena ? "¡Comida buena recogida!" : "¡Comida mala recogida!");
@@ -85,4 +93,6 @@ public class FoodItem : MonoBehaviour
             Gizmos.DrawWireSphere(transform.position, collider.radius);
         }
     }
+
+
 }

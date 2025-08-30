@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 092a46014c2873749b8e8a64486f3edd
+guid: b0f429f4876740e4b9a41636a5c9b1b9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9010997100383349577
-    second: emptyHeart_0
+      213: 1591307199607372365
+    second: Recurso 13_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: emptyHeart_0
+      name: Recurso 13_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1022
-        height: 1023
+        width: 344
+        height: 289
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 94bac68de1e7d0d70800000000000000
-      internalID: 9010997100383349577
+      spriteID: d4a7e198775751610800000000000000
+      internalID: 1591307199607372365
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      emptyHeart_0: 9010997100383349577
+      Recurso 13_0: 1591307199607372365
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1608,13 +1608,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 895a0cecbe671ff468e5459af5d0b152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthManager
-  health: 3
   hearts:
   - {fileID: 1419909480}
   - {fileID: 469387789}
   - {fileID: 1933754963}
   fullHeart: {fileID: 21300000, guid: 7caf93c5e06cf524e8246f203d4df8fe, type: 3}
-  emptyHeart: {fileID: 21300000, guid: 092a46014c2873749b8e8a64486f3edd, type: 3}
+  emptyHeart: {fileID: 21300000, guid: b0f429f4876740e4b9a41636a5c9b1b9, type: 3}
 --- !u!4 &1841674630
 Transform:
   m_ObjectHideFlags: 0
