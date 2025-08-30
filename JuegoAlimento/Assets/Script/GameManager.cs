@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 
     public DatosJugador datosJugador=new DatosJugador();
 
+    public int puntos = 0;
+
     private void Awake()
     {
         if (Instance == null)
@@ -20,15 +22,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void sumPuntos(int value)
     {
-        
+        puntos += value;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int Puntos { get => puntos; set => puntos = value; }
 }

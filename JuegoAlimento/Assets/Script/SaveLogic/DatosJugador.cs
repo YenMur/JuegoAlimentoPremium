@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DatosJugador : MonoBehaviour
+public class DatosJugador 
 {
     public string nombre;
     public string edad;

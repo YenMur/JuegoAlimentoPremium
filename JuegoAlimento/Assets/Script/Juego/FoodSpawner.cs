@@ -108,7 +108,7 @@ public class FoodSpawner : MonoBehaviour
         if (comidaObj.GetComponent<Rigidbody2D>() == null)
         {
             Rigidbody2D rb = comidaObj.AddComponent<Rigidbody2D>();
-            rb.isKinematic = false; 
+            rb.bodyType= RigidbodyType2D.Dynamic;
             rb.gravityScale = 0f;   
             rb.freezeRotation = true; 
         }

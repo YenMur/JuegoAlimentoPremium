@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
 {
     public BaseDatosPersonajes bdPersonajes;
 
-    public Image personajeImagen;
+    public SpriteRenderer personajeSprite;
 
     private int opcionSeleccionada = 0;
 
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     private void UpdateCharacter(int opcionSeleccionada)
     {
         Personajes personaje = bdPersonajes.GetPersonaje(opcionSeleccionada);
-        personajeImagen.sprite = personaje.personajeSprite;
+        personajeSprite.sprite = personaje.personajeSprite;
     }
 
     private void Load()

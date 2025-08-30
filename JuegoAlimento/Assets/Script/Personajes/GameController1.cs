@@ -25,10 +25,21 @@ public class GameController1 : MonoBehaviour
 
         if (GameManager.Instance != null)
         {
-            nombre = GameManager.Instance.datosJugador.nombre;
-            edad = GameManager.Instance.datosJugador.edad;
-            ciudad = GameManager.Instance.datosJugador.ciudad;
-            correo = GameManager.Instance.datosJugador.correo;
+            if (GameManager.Instance.datosJugador != null)
+            {
+                nombre = GameManager.Instance.datosJugador.nombre;
+                edad = GameManager.Instance.datosJugador.edad;
+                ciudad = GameManager.Instance.datosJugador.ciudad;
+                correo = GameManager.Instance.datosJugador.correo;
+            }
+            else
+            {
+                Debug.LogWarning("GameManager.Instance existe, pero datosJugador es NULL");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("GameManager.Instance es NULL");
         }
 
     }

@@ -6,15 +6,19 @@ public class FoodItem : MonoBehaviour
     public bool esBuena = true;
     private Rigidbody2D rb;
 
+    private int comidaBuena = 10;
+    private int comidaMala = -5;
+
     void Start()
     {
+        
         rb = GetComponent<Rigidbody2D>();
         if (rb == null)
         {
             rb = gameObject.AddComponent<Rigidbody2D>();
         }
 
-        rb.isKinematic = false;
+        rb.bodyType= RigidbodyType2D.Dynamic;
         rb.gravityScale = 0f;
         rb.freezeRotation = true;
 
@@ -55,6 +59,17 @@ public class FoodItem : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
+            if(esBuena)
+            {
+                // Aquí puedes agregar lógica para cuando se recoge comida buena
+                GameManager.Instance.sumPuntos(comidaBuena);
+            }
+            else
+            {
+                // Aquí puedes agregar lógica para cuando se recoge comida mala
+                GameManager.Instance.sumPuntos(comidaMala);
+            }
+
             Debug.Log(esBuena ? "¡Comida buena recogida!" : "¡Comida mala recogida!");
             Destroy(gameObject);
         }
