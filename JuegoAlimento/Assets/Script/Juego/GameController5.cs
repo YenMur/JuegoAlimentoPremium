@@ -11,6 +11,10 @@ public class GameController5 : MonoBehaviour
 
     [SerializeField] private GameObject PanelPerdio;
 
+    [SerializeField] private AudioSource musicaSource;
+
+    [SerializeField] private AudioClip musicaSad;
+
     private float cuentaRegresiva = 40f; // Tiempo inicial en segundos
     private float currentTime;
     private bool cuentaRegresivaActiva = true;
@@ -27,7 +31,7 @@ public class GameController5 : MonoBehaviour
     void Update()
     {
 
-        if (cuentaRegresivaActiva)
+        if (GameManager.Instance.juegoIniciado&&cuentaRegresivaActiva)
         {
             currentTime -= Time.deltaTime;
 
@@ -47,13 +51,14 @@ public class GameController5 : MonoBehaviour
 
     void UpdateCountdownUI(float time)
     {
+        int minutes=Mathf.FloorToInt(time / 60);
         int seconds=Mathf.FloorToInt(time % 60);
-        TMP_Tiempo.text=string.Format("{00:00}", seconds);
+        TMP_Tiempo.text=string.Format("{0:00}:{1:00}", minutes,seconds);
     }
 
     public void ActualizarPuntos()
     {
-        TMP_Puntos.text=GameManager.Instance.puntos.ToString();
+        TMP_Puntos.text=GameManager.Instance.puntos.ToString("D3");
     }
 
     public void Perder()
@@ -63,6 +68,17 @@ public class GameController5 : MonoBehaviour
         GameManager.Instance.juegoTerminado=true;
 
         StartCoroutine(CargarScore());
+
+        musicaSource.Stop();
+
+        musicaSource.clip=musicaSad;
+        musicaSource.loop=false;
+        musicaSource.Play();
+    }
+
+    public void IniciarCuentaRegresiva()
+    {
+        cuentaRegresivaActiva=true;
     }
 
     private IEnumerator CargarScore()

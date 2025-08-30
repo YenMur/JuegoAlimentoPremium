@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     public bool juegoTerminado = false;
 
+    public bool juegoIniciado = false;
+
     private void Awake()
     {
         if (Instance == null)

@@ -6,10 +6,10 @@ public class FoodSpawner : MonoBehaviour
     public BaseDatosComidas baseDatosComidas;
     public GameObject foodPrefab;
 
-    public float tiempoEntreSpawn = 1.5f;
-    public float minVelocidadCaida = 2f;
-    public float maxVelocidadCaida = 5f;
-    public float probabilidadComidaBuena = 70f;
+    public float tiempoEntreSpawn = 1f;
+    public float minVelocidadCaida = 7f;
+    public float maxVelocidadCaida = 10f;
+    public float probabilidadComidaBuena = 20f;
 
     public float minX = -8f;
     public float maxX = 8f;
@@ -25,7 +25,12 @@ public class FoodSpawner : MonoBehaviour
     {
         while (true)
         {
-            if(!GameManager.Instance.juegoTerminado)
+            if(!GameManager.Instance.juegoIniciado)
+            {
+                yield return null;
+                continue;
+            }
+            if (!GameManager.Instance.juegoTerminado)
             {
                 SpawnFood();
             }

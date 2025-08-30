@@ -2,14 +2,17 @@ using UnityEngine;
 
 public class MovimientoPersonaje : MonoBehaviour
 {
-    public float velocidad = 8f;
+    public float velocidad = 9f;
     public float limiteIzquierdo = -8f;
     public float limiteDerecho = 8f;
 
     void Update()
     {
         if (GameManager.Instance.juegoTerminado) return;
-        
+
+        if (!GameManager.Instance.juegoIniciado) return;
+
+
         float dir = Input.GetAxis("Horizontal");
 
         if (dir != 0)
