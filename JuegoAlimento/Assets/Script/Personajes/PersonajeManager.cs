@@ -56,6 +56,12 @@ public class PersonajeManager : MonoBehaviour
     private void Load()
     {
         opcionSeleccionada = PlayerPrefs.GetInt("opcionSeleccionada");
+
+        //Normalizamos
+        if (opcionSeleccionada >= bdPersonajes.PersonajesCount)
+        {
+            opcionSeleccionada = 0; // vuelve al primero si se pasa
+        }
     }
 
     private void Save()

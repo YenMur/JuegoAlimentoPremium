@@ -14,6 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BaseDatosMascotas
   mascotas:
   - mascotaSprite: {fileID: 21300000, guid: 51aa40a962ff8594d8053a0d306c0112, type: 3}
+    mascotaFeliz: {fileID: 3553032166633260159, guid: 948eb61076bed484994547195feebcdc, type: 3}
+    mascotaTriste: {fileID: 21300000, guid: dc76e5f741bb56943bd15387c3bfd3dc, type: 3}
   - mascotaSprite: {fileID: -8937594717961576507, guid: cbb7db9612e9c4642b928b4fefc12c8f, type: 3}
+    mascotaFeliz: {fileID: 46910434732852894, guid: e83394dfb1271cc4e80c9934a9a2d60f, type: 3}
+    mascotaTriste: {fileID: 21300000, guid: aa9661b789e7ef94c8c9729cb5b6d0e6, type: 3}
   - mascotaSprite: {fileID: -2495308812559146508, guid: 03a76debe8d97d3488200ac401010e7e, type: 3}
+    mascotaFeliz: {fileID: -1548579137953252499, guid: 8b66f401031c82642b1ac10cae40b76f, type: 3}
+    mascotaTriste: {fileID: 21300000, guid: 92631cc9ad247414385504fb3455b2c0, type: 3}
   - mascotaSprite: {fileID: 3791106748439352679, guid: ffeae4488dedbd948a390052222c0935, type: 3}
+    mascotaFeliz: {fileID: 6743665804283820384, guid: eb47217699066c6459074d98e47bc474, type: 3}
+    mascotaTriste: {fileID: 21300000, guid: 9d55df076a2279741831c934ddee7385, type: 3}

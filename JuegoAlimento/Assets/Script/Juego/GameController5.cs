@@ -11,9 +11,13 @@ public class GameController5 : MonoBehaviour
 
     [SerializeField] private GameObject PanelPerdio;
 
+    [SerializeField] private GameObject PanelInicio;
+
     [SerializeField] private AudioSource musicaSource;
 
     [SerializeField] private AudioClip musicaSad;
+
+    [SerializeField] private AudioClip musicaWin;
 
     private float cuentaRegresiva = 40f; // Tiempo inicial en segundos
     private float currentTime;
@@ -25,6 +29,7 @@ public class GameController5 : MonoBehaviour
     {
         currentTime= cuentaRegresiva;
         PanelPerdio.SetActive(false);
+        PanelInicio.SetActive(false);
     }
 
     // Update is called once per frame
@@ -44,6 +49,7 @@ public class GameController5 : MonoBehaviour
                 cuentaRegresivaActiva=false;
                 currentTime=0;
                 UpdateCountdownUI(currentTime);
+                Ganar();
             }
         }
         ActualizarPuntos();
@@ -66,6 +72,7 @@ public class GameController5 : MonoBehaviour
         cuentaRegresivaActiva=false;
         PanelPerdio.SetActive(true);
         GameManager.Instance.juegoTerminado=true;
+        GameManager.Instance.partidaGanada=false;
 
         StartCoroutine(CargarScore());
 
@@ -73,6 +80,23 @@ public class GameController5 : MonoBehaviour
 
         musicaSource.clip=musicaSad;
         musicaSource.loop=false;
+        musicaSource.Play();
+    }
+
+    public void Ganar()
+    {
+        cuentaRegresivaActiva=false;
+        PanelInicio.SetActive(true);
+        GameManager.Instance.juegoTerminado=true;
+        GameManager.Instance.partidaGanada=true;
+
+        StartCoroutine(CargarScore());
+
+
+        musicaSource.Stop();
+
+        musicaSource.clip = musicaWin;
+        musicaSource.loop = false;
         musicaSource.Play();
     }
 
