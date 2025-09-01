@@ -15,6 +15,15 @@ public class GameManager : MonoBehaviour
 
     public bool partidaGanada= false;
 
+
+    #region Jugador
+    public string nombreJugador;
+    public string edadJugador;
+    public string ciudadJugador;
+    public string correoJugador;
+    #endregion
+
+
     private void Awake()
     {
         if (Instance == null)

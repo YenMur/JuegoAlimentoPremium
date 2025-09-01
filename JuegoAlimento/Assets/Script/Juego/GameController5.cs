@@ -81,6 +81,8 @@ public class GameController5 : MonoBehaviour
         musicaSource.clip=musicaSad;
         musicaSource.loop=false;
         musicaSource.Play();
+
+        FindFirstObjectByType<GuardarDatosJugador>().GuardarDatos();
     }
 
     public void Ganar()
@@ -98,6 +100,8 @@ public class GameController5 : MonoBehaviour
         musicaSource.clip = musicaWin;
         musicaSource.loop = false;
         musicaSource.Play();
+
+        FindFirstObjectByType<GuardarDatosJugador>().GuardarDatos();
     }
 
     public void IniciarCuentaRegresiva()

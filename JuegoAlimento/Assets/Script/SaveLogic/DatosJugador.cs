@@ -6,6 +6,7 @@ public class DatosJugador
     public string edad;
     public string ciudad;
     public string correo;
-    public string puntuacion;
-    public string tiempo;
+    public int puntuacion;
+
+    public string fecha;
 }
