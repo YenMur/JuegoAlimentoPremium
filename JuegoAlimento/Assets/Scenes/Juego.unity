@@ -1217,7 +1217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CountDown
   countdownText: {fileID: 1532346961}
   audioSource: {fileID: 669334274}
-  countdownClip: {fileID: 8300000, guid: 1325da371627a5541912f93fc0e4fba1, type: 3}
+  countdownClip: {fileID: 8300000, guid: 9526c021ee32e2348902d126b3a9050a, type: 3}
   panel: {fileID: 744464007}
 --- !u!4 &669334276
 Transform:
@@ -2473,7 +2473,7 @@ PrefabInstance:
     - target: {fileID: 9193050146672254091, guid: 8b710f2304f2f594aa4ba88333c4b2e7, type: 3}
       propertyPath: m_Resource
       value: 
-      objectReference: {fileID: 8300000, guid: f7e6f4aac2b2210449a9de6b8af9b309, type: 3}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
