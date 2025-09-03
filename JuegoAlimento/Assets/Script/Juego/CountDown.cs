@@ -6,8 +6,6 @@ public class CountDown : MonoBehaviour
 {
 
     [SerializeField] private TextMeshProUGUI countdownText;
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip countdownClip;
     [SerializeField] private GameObject panel;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,8 +16,6 @@ public class CountDown : MonoBehaviour
 
     private IEnumerator StartCountdown()
     {
-        audioSource.clip = countdownClip;
-        audioSource.Play();
 
         countdownText.text = "1";
         yield return new WaitForSeconds(1f);

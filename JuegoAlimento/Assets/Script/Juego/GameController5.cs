@@ -82,7 +82,7 @@ public class GameController5 : MonoBehaviour
         musicaSource.loop=false;
         musicaSource.Play();
 
-        FindFirstObjectByType<GuardarDatosJugador>().GuardarDatos();
+        GameManager.Instance.GuardarDatosJugador();
     }
 
     public void Ganar()
@@ -101,7 +101,7 @@ public class GameController5 : MonoBehaviour
         musicaSource.loop = false;
         musicaSource.Play();
 
-        FindFirstObjectByType<GuardarDatosJugador>().GuardarDatos();
+        GameManager.Instance.GuardarDatosJugador();
     }
 
     public void IniciarCuentaRegresiva()

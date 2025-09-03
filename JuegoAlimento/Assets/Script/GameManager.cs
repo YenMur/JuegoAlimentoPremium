@@ -1,11 +1,13 @@
 using UnityEngine;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
 
     public static GameManager Instance;
 
-    public DatosJugador datosJugador=new DatosJugador();
+
+    public Historial historialPartidas=new Historial();
 
     public int puntos = 0;
 
@@ -23,6 +25,7 @@ public class GameManager : MonoBehaviour
     public string correoJugador;
     #endregion
 
+    private string rutaArchivo;
 
     private void Awake()
     {
@@ -30,6 +33,17 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            rutaArchivo=Application.persistentDataPath + "/datosUsuariosPet.json";
+
+            if(File.Exists(rutaArchivo))
+            {
+                string datosJson = File.ReadAllText(rutaArchivo);
+                historialPartidas = JsonUtility.FromJson<Historial>(datosJson);
+
+                if (historialPartidas == null)
+                    historialPartidas = new Historial();
+            }
         }
         else
         {
@@ -43,4 +57,24 @@ public class GameManager : MonoBehaviour
     }
 
     public int Puntos { get => puntos; set => puntos = value; }
+
+    public void GuardarDatosJugador()
+    {
+        DatosJugador datosJugador = new DatosJugador();
+
+        Debug.Log("Guardando datos del jugador...");
+
+        datosJugador.nombre = nombreJugador;
+        datosJugador.edad = edadJugador;
+        datosJugador.ciudad = ciudadJugador;
+        datosJugador.correo = correoJugador;
+        datosJugador.puntuacion = puntos;
+        datosJugador.fecha = System.DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+
+        historialPartidas.partidas.Add(datosJugador);
+
+        string datosJson = JsonUtility.ToJson(historialPartidas, true);
+        File.WriteAllText(rutaArchivo, datosJson);
+        Debug.Log("Datos guardados: " + datosJson);
+    }
 }

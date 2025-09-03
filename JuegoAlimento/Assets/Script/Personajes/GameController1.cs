@@ -23,31 +23,7 @@ public class GameController1 : MonoBehaviour
     {
         TMP_Alerta.gameObject.SetActive(false);
 
-        if (GameManager.Instance != null)
-        {
-            if (GameManager.Instance.datosJugador != null)
-            {
-                nombre = GameManager.Instance.datosJugador.nombre;
-                edad = GameManager.Instance.datosJugador.edad;
-                ciudad = GameManager.Instance.datosJugador.ciudad;
-                correo = GameManager.Instance.datosJugador.correo;
-            }
-            else
-            {
-                Debug.LogWarning("GameManager.Instance existe, pero datosJugador es NULL");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("GameManager.Instance es NULL");
-        }
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
 
@@ -60,7 +36,8 @@ public class GameController1 : MonoBehaviour
             ciudad = ITCiudad.text.Trim();
             correo = ITCorreo.text.Trim();
 
-            if(string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(edad) || string.IsNullOrEmpty(ciudad) || string.IsNullOrEmpty(correo))
+            if(string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(edad) || 
+               string.IsNullOrEmpty(ciudad) || string.IsNullOrEmpty(correo))
             {
                 
                 Debug.LogWarning("Por favor, complete todos los campos.");
@@ -68,19 +45,13 @@ public class GameController1 : MonoBehaviour
                 return;
             }
         
-            Debug.Log("Datos guardados:");
-            Debug.Log("Nombre: " + nombre);
-            Debug.Log("Edad: " + edad);
-            Debug.Log("Ciudad: " + ciudad);
-            Debug.Log("Correo: " + correo);
+            GameManager.Instance.nombreJugador = nombre;
+            GameManager.Instance.edadJugador = edad;
+            GameManager.Instance.ciudadJugador = ciudad;
+            GameManager.Instance.correoJugador = correo;
 
-            SiguienteEscena();
-        
-    }
-
-    public void SiguienteEscena()
-    {
         SceneManager.LoadScene("Mascota");
+
     }
 
 }

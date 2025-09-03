@@ -1,29 +1,38 @@
+using System.IO;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI playerName;
-    [SerializeField] private TextMeshProUGUI ciudad;
-    [SerializeField] private TextMeshProUGUI edad;
-    [SerializeField] private TextMeshProUGUI score;
+    [SerializeField] private Transform contenedorRanking;
+    [SerializeField] private GameObject prefabDatos;
+
+    private string rutaArchivo;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (GameManager.Instance != null)
+        rutaArchivo = Application.persistentDataPath + "/datosUsuariosPet.json";
+
+        if (File.Exists(rutaArchivo))
         {
-            var datos = GameManager.Instance.datosJugador;
+            string json = File.ReadAllText(rutaArchivo);
+            Historial historial = JsonUtility.FromJson<Historial>(json);
 
-            playerName.text =  datos.nombre;
-            ciudad.text =  datos.edad;
-            edad.text = datos.ciudad;
+            var ranking = historial.partidas.OrderByDescending(p => p.puntuacion).ToList();
 
-            score.text = GameManager.Instance.puntos.ToString("D3");
+            foreach (var jugador in ranking)
+            {
+                GameObject fila = Instantiate(prefabDatos, contenedorRanking);
+                TextMeshProUGUI texto = fila.GetComponent<TextMeshProUGUI>();
+
+                texto.text = $"{jugador.nombre}\n {jugador.correo}\n {jugador.ciudad} - {jugador.edad} años \n {jugador.puntuacion:D3} pts - {jugador.fecha}";
+            }
         }
         else
         {
-            Debug.LogWarning("GameManager.Instance es null en la escena Score");
+            Debug.LogWarning("No se encontró el archivo de ranking.");
         }
     }
 
