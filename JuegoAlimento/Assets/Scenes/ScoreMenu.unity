@@ -245,7 +245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 827, y: 436}
+  m_AnchoredPosition: {x: 682, y: 321}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &163682122
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9490197, g: 0.5764706, b: 0.3647059, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1409,7 +1409,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1389661570}
-  - component: {fileID: 1389661571}
+  - component: {fileID: 1389661572}
   m_Layer: 0
   m_Name: ----Score----
   m_TagString: Untagged
@@ -1432,7 +1432,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1389661571
+--- !u!114 &1389661572
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1441,11 +1441,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1389661569}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57d14d114a7ac954baa519a833d278b3, type: 3}
+  m_Script: {fileID: 11500000, guid: a3720c568f8f9344ba2ea60be0cb6961, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Score
+  m_EditorClassIdentifier: Assembly-CSharp::Result
   contenedorRanking: {fileID: 1400287483}
-  prefabDatos: {fileID: 6506039267492641558, guid: e90ff70e3626eb042859b5bc8cf6c1b0, type: 3}
+  prefabDatos: {fileID: 1577680826971858813, guid: 3e34310170502ea41b798e62f251f5f2, type: 3}
 --- !u!1 &1400287482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,12 +1510,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
   m_Padding:
-    m_Left: 40
-    m_Right: 20
-    m_Top: 40
+    m_Left: 0
+    m_Right: 0
+    m_Top: -32
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 70
+  m_Spacing: -70.32
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1

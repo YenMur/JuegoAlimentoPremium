@@ -7,7 +7,19 @@ public class LoadScene : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
-
+    
+    public void LoadPreviousScene()
+    {
+        int escenaActual = SceneManager.GetActiveScene().buildIndex;
+        if(escenaActual > 0)
+        {
+            SceneManager.LoadScene(escenaActual - 1);
+        }
+        else
+        {
+            Debug.Log("No hay escena anterior.");
+        }
+    }
 
     public void QuitGame()
     {
