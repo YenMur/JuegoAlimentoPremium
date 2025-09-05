@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
 
     public bool partidaGanada= false;
 
-
     #region Jugador
     public string nombreJugador;
     public string edadJugador;

@@ -13,12 +13,17 @@ public class Result : MonoBehaviour
     [SerializeField] private Sprite plata;
     [SerializeField] private Sprite bronce;
 
+    
+
     private string rutaArchivo;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rutaArchivo = Application.persistentDataPath + "/datosUsuariosPet.json";
+
+        
+
 
         if (File.Exists(rutaArchivo))
         {

@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class ScoreMenu : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class ScoreMenu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI ganador;
 
     [SerializeField] private Image iconoPosicion;
+
     public void Datos(DatosJugador jugador, int posicion, Sprite oro, Sprite plata, Sprite bronce)
     {
         nombreText.text = jugador.nombre;
@@ -19,21 +21,22 @@ public class ScoreMenu : MonoBehaviour
         datosText.text=$"{jugador.ciudad} - {jugador.edad} años";
         correoText.text = jugador.correo;
 
-        if(posicion == 1)
+       
+        if (posicion == 1)
         {
             iconoPosicion.enabled = true;
             Debug.Log("Asignando icono de oro");
             iconoPosicion.sprite = oro;
             ganador.enabled = true;
         }
-        else if(posicion == 2)
+        else if (posicion == 2)
         {
             iconoPosicion.enabled = true;
             Debug.Log("Asignando icono de plata");
             iconoPosicion.sprite = plata;
             ganador.enabled = false;
         }
-        else if(posicion == 3)
+        else if (posicion == 3)
         {
             iconoPosicion.enabled = true;
             Debug.Log("Asignando icono de bronce");
