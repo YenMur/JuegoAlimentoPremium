@@ -6,33 +6,27 @@ public class FoodItem : MonoBehaviour
     public float velocidadCaida;
     public bool esBuena = true;
     private Rigidbody2D rb;
-
     private int comidaBuena = 10;
     private int comidaMala = -5;
-
     private GameController5 gameController;
 
     void Start()
     {
-        gameController=FindFirstObjectByType<GameController5>();
-
+        gameController = FindFirstObjectByType<GameController5>();
         velocidadCaida = 3f;
         rb = GetComponent<Rigidbody2D>();
         if (rb == null)
         {
             rb = gameObject.AddComponent<Rigidbody2D>();
         }
-
-        rb.bodyType= RigidbodyType2D.Dynamic;
+        rb.bodyType = RigidbodyType2D.Dynamic;
         rb.gravityScale = 0f;
         rb.freezeRotation = true;
-
         ConfigurarCollider();
-
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         if (sr != null && sr.sortingOrder >= 2)
         {
-            sr.sortingOrder = 1; 
+            sr.sortingOrder = 1;
         }
     }
 
@@ -43,7 +37,6 @@ public class FoodItem : MonoBehaviour
         {
             collider = gameObject.AddComponent<CircleCollider2D>();
         }
-
         collider.isTrigger = true;
         collider.radius = 0.4f;
     }
@@ -51,7 +44,6 @@ public class FoodItem : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.down * velocidadCaida * Time.deltaTime);
-
         if (transform.position.y < -10f)
         {
             Destroy(gameObject);
@@ -61,33 +53,32 @@ public class FoodItem : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Colisión detectada con: " + other.gameObject.name + " - Tag: " + other.tag);
-
         if (other.CompareTag("Player"))
         {
-            if(esBuena)
+            if (esBuena)
             {
-                // Aquí puedes agregar lógica para cuando se recoge comida buena
                 GameManager.Instance.sumPuntos(comidaBuena);
             }
             else
             {
-                // Aquí puedes agregar lógica para cuando se recoge comida mala
                 GameManager.Instance.sumPuntos(comidaMala);
                 HealthManager.health--;
 
-                if(HealthManager.health <= 0)
+                if (gameController != null)
                 {
-                   // GameManager.Instance.GameOver();
-                   Debug.Log("Game Over!");
+                    gameController.ReproducirSonidoComidaMala();
+                }
+
+                if (HealthManager.health <= 0)
+                {
+                    Debug.Log("Game Over!");
                     gameController.Perder();
                 }
             }
-
             Debug.Log(esBuena ? "¡Comida buena recogida!" : "¡Comida mala recogida!");
             Destroy(gameObject);
         }
     }
-
 
     void OnDrawGizmosSelected()
     {
@@ -98,6 +89,4 @@ public class FoodItem : MonoBehaviour
             Gizmos.DrawWireSphere(transform.position, collider.radius);
         }
     }
-
-
 }

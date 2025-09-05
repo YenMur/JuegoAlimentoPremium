@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 125161446}
   m_Layer: 5
   m_Name: Volumen
-  m_TagString: Untagged
+  m_TagString: VolumeButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2099,7 +2099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5219a5dfc7b761c4282bfcb5d2b585c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  iconButton: {fileID: 125161445}
+  volumeButton: {fileID: 125161446}
   soundOnIcon: {fileID: 21300000, guid: 3cd897ab8ca9d2149a7ce8df8d034b33, type: 3}
   soundOffIcon: {fileID: 21300000, guid: 2da74d0f51ad44446b9a1b5a7cbd2f91, type: 3}
 --- !u!4 &1875324303
