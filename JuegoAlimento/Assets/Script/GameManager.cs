@@ -50,6 +50,9 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        Debug.Log("GameManager vivo en escena: " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+
     }
 
     public void sumPuntos(int value)

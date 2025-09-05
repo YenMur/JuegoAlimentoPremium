@@ -92,6 +92,9 @@ public class GameController5 : MonoBehaviour
         GameManager.Instance.juegoTerminado=true;
         GameManager.Instance.partidaGanada=true;
 
+        Debug.Log("Voy a Resultado con partidaGanada=" + GameManager.Instance.partidaGanada);
+
+
         StartCoroutine(CargarScore());
 
 

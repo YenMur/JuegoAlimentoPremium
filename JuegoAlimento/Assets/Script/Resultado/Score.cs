@@ -28,6 +28,7 @@ public class Score : MonoBehaviour
                 TextMeshProUGUI texto = fila.GetComponent<TextMeshProUGUI>();
 
                 texto.text = $"{jugador.nombre}\n {jugador.correo}\n {jugador.ciudad} - {jugador.edad} años \n {jugador.puntuacion:D3} pts - {jugador.fecha}";
+
             }
         }
         else

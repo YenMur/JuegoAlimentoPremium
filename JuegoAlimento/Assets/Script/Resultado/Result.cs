@@ -9,6 +9,10 @@ public class Result : MonoBehaviour
     [SerializeField] private Transform contenedorRanking;
     [SerializeField] private GameObject prefabDatos;
 
+    [SerializeField] private Sprite oro;
+    [SerializeField] private Sprite plata;
+    [SerializeField] private Sprite bronce;
+
     private string rutaArchivo;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,12 +27,16 @@ public class Result : MonoBehaviour
 
             var ranking = historial.partidas.OrderByDescending(p => p.puntuacion).ToList();
 
+            int posicion = 1;
             foreach (var jugador in ranking)
             {
                 GameObject fila = Instantiate(prefabDatos, contenedorRanking);
                 
                 ScoreMenu scoreMenu = fila.GetComponent<ScoreMenu>();
-                scoreMenu.Datos(jugador);
+                scoreMenu.Datos(jugador,posicion,oro,plata,bronce);
+
+                posicion++;
+
             }
         }
         else
