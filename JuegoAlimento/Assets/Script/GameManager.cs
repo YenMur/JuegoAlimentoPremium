@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     public bool partidaGanada= false;
 
-    public GameController1 gc1;
+    public int personajeSeleccionado;
 
     #region Jugador
     public string nombreJugador;
@@ -62,6 +62,15 @@ public class GameManager : MonoBehaviour
     }
 
     public int Puntos { get => puntos; set => puntos = value; }
+
+    public void ResetPartida()
+    {
+        puntos = 0;
+        juegoTerminado = false;
+        juegoIniciado = false;
+        partidaGanada = false;
+    }
+
 
     public void GuardarDatosJugador()
     {

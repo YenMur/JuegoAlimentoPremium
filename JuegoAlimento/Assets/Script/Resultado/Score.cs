@@ -7,16 +7,9 @@ public class Score : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer comida;
 
-    private void Start()
+    private void OnEnable()
     {
-        if (GameManager.Instance.partidaGanada == true)
-        {
-            comida.enabled = true;
-        }
-        else
-        {
-            comida.enabled = false;
-        }
+        comida.enabled=GameManager.Instance.partidaGanada;
     }
 
 }

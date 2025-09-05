@@ -42,6 +42,8 @@ public class Result : MonoBehaviour
 
                 posicion++;
 
+                GameManager.Instance.ResetPartida();
+
             }
         }
         else

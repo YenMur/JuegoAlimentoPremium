@@ -7,19 +7,10 @@ public class Player : MonoBehaviour
 
     public SpriteRenderer personajeSprite;
 
-    private int opcionSeleccionada = 0;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (!PlayerPrefs.HasKey("opcionSeleccionada"))
-        {
-            opcionSeleccionada = 0;
-        }
-        else
-        {
-            Load();
-        }
+        int opcionSeleccionada = GameManager.Instance.personajeSeleccionado;
 
         UpdateCharacter(opcionSeleccionada);
     }
@@ -30,9 +21,5 @@ public class Player : MonoBehaviour
         personajeSprite.sprite = personaje.personajeSprite;
     }
 
-    private void Load()
-    {
-        opcionSeleccionada = PlayerPrefs.GetInt("opcionSeleccionada");
-    }
 
 }

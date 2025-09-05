@@ -51,6 +51,8 @@ public class PersonajeManager : MonoBehaviour
     {
         Personajes personaje = bdPersonajes.GetPersonaje(opcionSeleccionada);
         personajeSprite.sprite = personaje.personajeSprite;
+
+        GameManager.Instance.personajeSeleccionado = opcionSeleccionada;
     }
 
     private void Load()
