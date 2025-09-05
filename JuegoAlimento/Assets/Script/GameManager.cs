@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     private string rutaArchivo;
 
+
     private void Awake()
     {
         if (Instance == null)

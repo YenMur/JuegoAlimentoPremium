@@ -52,8 +52,9 @@ public class MascotaManager : MonoBehaviour
     private void ActualizarMascota(int opcionSeleccionada)
     {
         Mascotas mascota = bdMascotas.GetMascota(opcionSeleccionada);
-        mascotaSprite.sprite = mascota.mascotaSprite;
-       
+
+        mascotaSprite.sprite=mascota.mascotaSprite;
+        
     }
 
     private void Load()
