@@ -16,6 +16,7 @@ public class GameController5 : MonoBehaviour
     [SerializeField] private AudioClip musicaSad;
     [SerializeField] private AudioClip musicaWin;
     [SerializeField] private AudioClip sfxComidaMala;
+    [SerializeField] private float volumenEfecto = 0.5f;
 
     private float cuentaRegresiva = 40f;
     private float currentTime;
@@ -70,7 +71,7 @@ public class GameController5 : MonoBehaviour
     {
         if (sfxComidaMala != null && sfxSource != null)
         {
-            sfxSource.PlayOneShot(sfxComidaMala);
+            sfxSource.PlayOneShot(sfxComidaMala,volumenEfecto);
         }
     }
 

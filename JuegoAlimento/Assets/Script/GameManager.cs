@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     public bool partidaGanada= false;
 
+    public GameController1 gc1;
+
     #region Jugador
     public string nombreJugador;
     public string edadJugador;
@@ -63,6 +65,11 @@ public class GameManager : MonoBehaviour
 
     public void GuardarDatosJugador()
     {
+        if (historialPartidas.partidas.Exists(p => p.correo == correoJugador))
+        {
+            Debug.LogWarning("El correo ya esta registrado en historial");
+            return;
+        }
         DatosJugador datosJugador = new DatosJugador();
 
         Debug.Log("Guardando datos del jugador...");

@@ -4,18 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections;
+using TMPro;
 
 public class ExportarCSV : MonoBehaviour
 {
 
     private string rutaArchivoCSV;
     private string rutaArchivoJSON;
-
+    [SerializeField] private TextMeshProUGUI descargaExitosa;
     void Start()
     {
         rutaArchivoCSV = Application.persistentDataPath + "/datosUsuariosPet.csv";
         rutaArchivoJSON = Application.persistentDataPath + "/datosUsuariosPet.json";
-        
+        descargaExitosa.enabled = false;
     }
 
     public void Exportar()
@@ -54,8 +56,15 @@ public class ExportarCSV : MonoBehaviour
 
         File.WriteAllLines(rutaArchivoCSV,lineas,Encoding.UTF8);
         Debug.Log("Datos exportados a CSV en: " + rutaArchivoCSV);
+        StartCoroutine(MostrarMensajeDescarga());
 
+    }
 
+    private IEnumerator MostrarMensajeDescarga()
+    {
+        descargaExitosa.enabled = true;
+        yield return new WaitForSeconds(1.5f);
+        descargaExitosa.enabled = false;
     }
 
 }

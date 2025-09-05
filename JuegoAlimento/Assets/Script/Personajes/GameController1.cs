@@ -10,6 +10,7 @@ public class GameController1 : MonoBehaviour
     [SerializeField] private TMP_InputField ITCorreo;
 
     [SerializeField] private TextMeshProUGUI TMP_Alerta;
+    [SerializeField] private TextMeshProUGUI TMP_CorreoExiste;
 
     private string nombre;
     private string edad;
@@ -22,6 +23,7 @@ public class GameController1 : MonoBehaviour
     void Start()
     {
         TMP_Alerta.gameObject.SetActive(false);
+        TMP_CorreoExiste.gameObject.SetActive(false);
 
 
     }
@@ -42,10 +44,22 @@ public class GameController1 : MonoBehaviour
                 
                 Debug.LogWarning("Por favor, complete todos los campos.");
                 TMP_Alerta.gameObject.SetActive(true);
+                TMP_Alerta.text = "Oh oh! Completa todos los campos.";
+            return;
+            }if(!correo.Contains("@") || !correo.Contains("."))
+            {
+                Debug.LogWarning("Por favor, ingrese un correo válido.");
+                TMP_Alerta.gameObject.SetActive(true);
+                TMP_Alerta.text = "Por favor, ingresa un correo válido.";
+            return;
+            }if(GameManager.Instance.historialPartidas.partidas.Exists(p=>p.correo==correo))
+            {
+                Debug.LogWarning("El correo ya está registrado.");
+                TMP_CorreoExiste.gameObject.SetActive(true);
                 return;
             }
-        
-            GameManager.Instance.nombreJugador = nombre;
+
+        GameManager.Instance.nombreJugador = nombre;
             GameManager.Instance.edadJugador = edad;
             GameManager.Instance.ciudadJugador = ciudad;
             GameManager.Instance.correoJugador = correo;
@@ -53,5 +67,6 @@ public class GameController1 : MonoBehaviour
         SceneManager.LoadScene("Mascota");
 
     }
+
 
 }

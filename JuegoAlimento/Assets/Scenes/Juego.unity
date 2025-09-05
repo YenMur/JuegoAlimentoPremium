@@ -2626,6 +2626,7 @@ MonoBehaviour:
   musicaSad: {fileID: 8300000, guid: 311dd58d4944c204f8d6ea60cd62e75a, type: 3}
   musicaWin: {fileID: 8300000, guid: 5bd72e34081c876448f4087d668a51f4, type: 3}
   sfxComidaMala: {fileID: 8300000, guid: 9d625e061a42fab40814f2559e2db945, type: 3}
+  volumenEfecto: 0.09
 --- !u!4 &1945437070
 Transform:
   m_ObjectHideFlags: 0
