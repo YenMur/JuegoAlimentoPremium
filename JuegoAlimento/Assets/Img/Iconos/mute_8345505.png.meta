@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: feb45746b59d6aa4e8cfeab9085ac6b9
+guid: 2da74d0f51ad44446b9a1b5a7cbd2f91
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5975938820719141926
-    second: logout_0
+      213: 4920248019463249461
+    second: mute_8345505_0
   - first:
-      213: 2282891400840467557
-    second: logout_1
+      213: 901320730042877524
+    second: mute_8345505_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -99,17 +99,82 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: logout_0
+      name: mute_8345505_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 76
-        width: 115
-        height: 104
+        x: 25
+        y: 45
+        width: 291
+        height: 422
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +183,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: adb919fed43311da0800000000000000
-      internalID: -5975938820719141926
+      spriteID: 53e1dee418b384440800000000000000
+      internalID: 4920248019463249461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: logout_1
+      name: mute_8345505_1
       rect:
         serializedVersion: 2
-        x: 76
-        y: 12
-        width: 147
-        height: 232
+        x: 345
+        y: 185
+        width: 142
+        height: 141
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +205,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 564d3ef32a57eaf10800000000000000
-      internalID: 2282891400840467557
+      spriteID: 456c6e6bd62228c00800000000000000
+      internalID: 901320730042877524
       vertices: []
       indices: 
       edges: []
@@ -160,8 +225,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      logout_0: -5975938820719141926
-      logout_1: 2282891400840467557
+      mute_8345505_0: 4920248019463249461
+      mute_8345505_1: 901320730042877524
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
